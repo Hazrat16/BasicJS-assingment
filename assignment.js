@@ -11,13 +11,15 @@ function kilometerToMeter(kilometer) {
     }
 }
 
-var input = kilometerToMeter(-.3);
-console.log(input);
 
 
 function budgetCalculator(numberOfWatch, numberOfPhone, numberOfLaptop) {
-    if (numberOfWatch < 0 || numberOfPhone < 0 || numberOfLaptop < 0) {
-        return "You can't buy a negative number of product.Please enter a positive value."
+    // number of product should be greater than 0
+    if (numberOfWatch <= 0 || numberOfPhone <= 0 || numberOfLaptop <= 0) {
+        return "Please enter a positive value."
+    }
+    else if (Math.floor(numberOfWatch) != numberOfWatch || Math.floor(numberOfPhone) != numberOfPhone || Math.floor(numberOfLaptop) != numberOfLaptop) {
+        return "Enter a valid number of product."  // number of product should be an integer.
     }
     else {
         var budgetForWatch = 50 * numberOfWatch;   //every watch costs 50
@@ -28,33 +30,30 @@ function budgetCalculator(numberOfWatch, numberOfPhone, numberOfLaptop) {
     }
 }
 
-var budget = budgetCalculator(-6, -4, -2);
-console.log(budget);
 
 
-function hotelCost(dayStaying){
+function hotelCost(dayStaying) {
     // if anyone stay more than 20days then he/she has to pay 50 for everydays after 20th days of staying and 80 for 11th to 20th day total 10 days also for 1st to 10th day he has to pay 100 for everyday.
-    if(dayStaying>=20){
+    if (Math.floor(dayStaying) != dayStaying || dayStaying <= 0) {
+        return "Enter a valid integer."
+    }
+    else if (dayStaying >= 20) {
         var remainig = dayStaying - 20;
-        cost = remainig*50 + 10*80 + 10*100;
+        cost = remainig * 50 + 10 * 80 + 10 * 100;
     }
     // if anyone stay more than 10days then he/she has to pay 80 for everydays after 10th day and for 1st to 10th day he has to pay 100 for everyday.
-    else if(dayStaying>=10){
+    else if (dayStaying >= 10) {
         var remainig = dayStaying - 10;
-        cost = remainig*80 + 10*100;
+        cost = remainig * 80 + 10 * 100;
     }
     // if anyone stay less or equal 10days he has to pay 100 for everyday.
-    else{
-        cost = dayStaying*100;
+    else {
+        cost = dayStaying * 100;
     }
     return cost;
 }
 
 
-for(i=0;i<=33;i++){
-    var input = hotelCost(i);
-    console.log(input);
-}
 
 
 function megaFriend(arrayOfName) {
@@ -71,10 +70,4 @@ function megaFriend(arrayOfName) {
         return "Name's length can't be zero.Please enter a real name."
     }
 }
-
-var input = ([ '', '']);
-var result = megaFriend(input);
-
-console.log(result);
-// console.log(megaFriend(['ali', 'monir', 'tanvir', 'shanto', 'mamunur', 'zayedislam']));
 
