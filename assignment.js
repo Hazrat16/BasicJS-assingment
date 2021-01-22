@@ -1,6 +1,6 @@
 // https://github.com/Hazrat16/BasicJS-assingment
 
-
+//a program that converts kilometers to meters.
 function kilometerToMeter(kilometer) {
     var result = kilometer * 1000; //1 kilometer = 1000 meter
     if (result > 0) {
@@ -12,7 +12,7 @@ function kilometerToMeter(kilometer) {
 }
 
 
-
+// a program that read number of products and calculates total budget
 function budgetCalculator(numberOfWatch, numberOfPhone, numberOfLaptop) {
     // number of product should be greater than 0
     if (numberOfWatch <= 0 || numberOfPhone <= 0 || numberOfLaptop <= 0) {
@@ -31,7 +31,7 @@ function budgetCalculator(numberOfWatch, numberOfPhone, numberOfLaptop) {
 }
 
 
-
+// a program that reads total days and calculates total cost
 function hotelCost(dayStaying) {
     // if anyone stay more than 20days then he/she has to pay 50 for everydays after 20th days of staying and 80 for 11th to 20th day total 10 days also for 1st to 10th day he has to pay 100 for everyday.
     if (Math.floor(dayStaying) != dayStaying || dayStaying <= 0) {
@@ -55,7 +55,7 @@ function hotelCost(dayStaying) {
 
 
 
-
+// a program that finds largest string from an array
 function megaFriend(arrayOfName) {
     var largestName = arrayOfName[0];
     for (i = 1; i < arrayOfName.length; i++) {
