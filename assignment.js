@@ -67,7 +67,7 @@ function megaFriend(arrayOfName) {
         return largestName;
     }
     else{
-        return "Name's length can't be zero.Please enter a real name."
+        return "Please enter a valid name."
     }
 }
 
